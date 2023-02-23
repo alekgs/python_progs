@@ -23,7 +23,7 @@ def exchange(list1: list, list2: list):
     del list2[:]
     list2.extend(list_tmp)
 
-    # Метод 2 (Python 3.8 +)
+    # Метод 2
     # list_tmp = list1.copy()
     #
     # list1.clear()
