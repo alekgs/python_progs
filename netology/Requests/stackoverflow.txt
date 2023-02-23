@@ -1,0 +1,28 @@
+{
+      "tags": [
+        "python",
+        "selenium",
+        "average"
+      ],
+      "owner": {
+        "account_id": 27705391,
+        "reputation": 1,
+        "user_id": 21149155,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a/AEdFTp49ZsMQUdDiBpR7ZpoKWhOcxYGmyStQGqq4UEBp=k-s256",
+        "display_name": "Damian Sokalski",
+        "link": "https://stackoverflow.com/users/21149155/damian-sokalski"
+      },
+      "is_answered": false,
+      "view_count": 87,
+      "closed_date": 1675639055,
+      "answer_count": 1,
+      "score": -3,
+      "last_activity_date": 1675640091,
+      "creation_date": 1675555511,
+      "last_edit_date": 1675613145,
+      "question_id": 75349238,
+      "link": "https://stackoverflow.com/questions/75349238/how-to-calculate-average-from-webelement-list",
+      "closed_reason": "Not suitable for this site",
+      "title": "How to calculate average from webelement list?"
+    },
