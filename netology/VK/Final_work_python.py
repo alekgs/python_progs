@@ -127,8 +127,7 @@ class VK:
             else:
                 f_name = date
             f_name += f'.{file_ext}'
-            res_out[self.id] = res_out.get(self.id, []) + [
-                {'file_name': f_name, 'url': f['url'], 'size': 'z'}]
+            res_out[self.id] = res_out.get(self.id, []) + [{'file_name': f_name, 'url': f['url'], 'size': 'z'}]
         return res_out
 
 
@@ -154,7 +153,12 @@ class YaDisk:
 
     def upload_file(self, res_parsed, d_vk, u_id, ph_count):
         """ Производит загрузку файла на сервер Я.Диск """
-        with pbar(ph_count, force_tty=True, title='Загрузка', stats=None) as bar:
+        total_photo_count = len(res_parsed)
+
+        if total_photo_count > ph_count:
+            total_photo_count = ph_count
+
+        with pbar(total_photo_count, force_tty=True, title='Загрузка', stats=None) as bar:
             for el in res_parsed.values():
                 for f in el:
                     bar.title = f"Файл {f['file_name']}"
