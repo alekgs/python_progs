@@ -71,7 +71,7 @@ class VK:
         resp = requests.post(self.url_user_get, params={**self.params, **params})
         if resp.status_code == 200:
             if not self.get_error_code(resp):
-                return 'Error'
+                return exit('Error')
             if resp.json()['response']:
                 print('OK')
                 u_info = resp.json()['response'][0]
@@ -92,7 +92,7 @@ class VK:
             resp = requests.get(self.url, params={**self.params, **params})
             if resp.status_code == 200:
                 if not self.get_error_code(resp):
-                    return 'Error'
+                    return exit('Error')
                 print('OK')
                 albums_count = resp.json()['response']['count']
                 result = []
@@ -139,7 +139,9 @@ class YaDisk:
 
     def __init__(self, token: str):
         self.token = token
-        self.headers = {"Content-Type": "application/json", "Authorization": f"OAuth {self.token}"}
+        self.headers = {"Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "Authorization": f"OAuth {self.token}"}
 
     def make_dir(self, mkdir):
         """ Создает каталог на Я.Диске """
@@ -148,7 +150,7 @@ class YaDisk:
         resp = requests.get(self.upload_url, params={'path': mkdir}, headers=self.headers)
         if resp.status_code != 201:
             requests.put(self.url_mkdir, params={'path': mkdir}, headers=self.headers)
-            print('OK')
+        print('OK')
 
     def upload_file(self, res_parsed, d_vk, u_id, ph_count):
         """ Производит загрузку файла на сервер Я.Диск """
@@ -189,9 +191,10 @@ def main():
 
     # Каталог VK user на Я.Диск
     dir_vk = f'VK/{user_id}'
+    # dir_vk = f'/{user_id}'
 
     # файл с токенами VK и YaD
-    with open('tokens') as t:
+    with open('.tokens') as t:
         vk_token, yd_token = t.read().splitlines()
 
     vk = VK(vk_token, user_id, dir_vk, album_id)
