@@ -1,6 +1,7 @@
-nums1 = [1, 2]
-nums2 = nums1
-nums2 += [3, 4]
+def bee(n):
+    if n > 0:
+        print(n)
+        bee(n - 1)
 
-print(nums1)
-print(nums2)
+bee(3)
+
