@@ -15,7 +15,8 @@
 
 
 def get_digits(number: int | float) -> list[int]:
-    return list(map(int, str(number).replace('.', '')))
+    # return list(map(int, str(number).replace('.', '')))
+    return list(map(int, filter(str.isdigit, str(number))))
 
 
 print(get_digits(16733))

@@ -4,7 +4,8 @@ from random import choice
 from faker import Faker
 from transliterate import translit
 
-faker = Faker('ru_RU')
+#faker = Faker('ru_RU')
+faker = Faker()
 
 
 def calculate_age():
