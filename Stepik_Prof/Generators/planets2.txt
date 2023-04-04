@@ -1,0 +1,4 @@
+Name = Mercury
+Diameter = 4879.4
+Mass = 3.302×10^23
+OrbitalPeriod = 0.241
