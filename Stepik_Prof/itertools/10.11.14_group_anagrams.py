@@ -23,9 +23,8 @@ from itertools import groupby
 
 def group_anagrams(words):
     sorted_words = sorted(words, key=sorted)
-    return ((*v, ) for _, v in groupby(sorted_words, key=sorted))
-        # yield (*v, )
-
+    return ((*v,) for _, v in groupby(sorted_words, key=sorted))
+    # yield (*v, )
 
 
 groups = group_anagrams(['evil', 'father', 'live', 'levi', 'book', 'afther', 'boko'])
